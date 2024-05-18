@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "@supabase/supabase-js": "^2.43.2",
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "node": "^22.2.0",
+    "nodemon": "^3.1.0"
+  },
+  "name": "novelnook",
+  "version": "1.0.0",
+  "description": "INST377 Final Project - NovelNook Application",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon -e *",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Zeeshawn Ahmad, Hannah Johnston, Samira Koraganie, Shamariah Ogu, William Micknick",
+  "license": "ISC"
+}

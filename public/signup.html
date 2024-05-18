@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+    <title>Sign Up</title>
+    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="login-signup.css">
+</head>
+
+<body class="user-registration-page">
+    <div id="header">
+        <h1>User Registration</h1>
+    </div>
+
+    <div class="userprofile-container">
+        <h2>Create a new account</h2>
+        <form id="signupForm">
+            
+            <div class="signupForm">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" placeholder='Enter Full Name' required>
+            </div>
+            <div class="signupForm">
+                <label for="userName">Username:</label>
+                <input type="text" id="userName" name="userName" placeholder='Enter Username' required>
+            </div>
+            <div class="signupForm">
+                <label for="userEmail">Email:</label>
+                <input type="email" id="userEmail" name="userEmail" placeholder='Enter Email Address' required>
+            </div>
+            <div class="signupForm">
+                <label for="password">Password:</label>
+                <div class="password-container">
+                    <input type="password" id="userPass" name="userPass" placeholder='Minimum 6 characters' required>
+                    <span class="eye-icon" id="eyeIcon"></span> <!-- Eye icon -->
+                </div>
+            </div>
+            <div id="passwordRequirements">
+                <ul>
+                    <li id="lengthRequirement">At least 6 characters</li>
+                    <li id="uppercaseRequirement">At least one uppercase letter</li>
+                    <li id="lowercaseRequirement">At least one lowercase letter</li>
+                    <li id="numberRequirement">At least one number</li>
+                </ul>
+            </div>
+            <div class="signupForm">
+                <!-- HTML !-->
+                <button class="button-24" role="button">Register</button>
+                <h4>Already have an account? <a href="login.html">Click here to login</a></h4>
+                <h4><a href="home.html">Return Home</a></h4>
+            </div>
+    </div>
+
+    </form>
+    </div>
+
+</body>
+
+</html>

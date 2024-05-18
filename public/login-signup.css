@@ -1,0 +1,128 @@
+/*I [Samira] will integrate this into styles.css but for testing
+I put this in a seperate file so that I could debug*/
+
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+:root {
+  --primary-color: #0d62e9;
+  --primary-color-dark: #FF4742;
+  --secondary-color: #22796e;
+  --text-dark: #2a2635;
+  --text-light: #6b7280;
+  --bg-color: #f9efe3;
+  --max-width: 1200px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover{
+  color: var(--primary-color-dark);
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg-color);
+}
+/* Password container styles (to position the eye icon within the input field) */
+.password-container {
+  position: relative;
+}
+
+/*
+.user-registration-page a:link,
+.user-registration-page a:visited {
+    color: rgb(40, 40, 194); 
+}
+*/
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 94%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.signupForm {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #415ec7;
+  font-weight: bold;
+}
+
+.userprofile-container {
+  width: 450px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.eye-icon {
+  position: absolute;
+  top: 50%;
+  right: 40px;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background-image: url('https://cdn-icons-png.freepik.com/256/3880/3880307.png');
+  /* Replace 'eye_icon.png' with the path to your eye icon image */
+  background-size: cover;
+  cursor: pointer;
+}
+
+#header {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* CSS */
+.button-24 {
+  background: #FF4742;
+  border: 1px solid #FF4742;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+.button-24:hover,
+.button-24:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #FF4742;
+}
+
+.button-24:active {
+  opacity: .5;
+}
+
