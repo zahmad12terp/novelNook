@@ -2,13 +2,17 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Library Help Page</title>
-    <link rel="stylesheet" href="help.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="home.css" />
     <script src="" defer></script>
     <script src="https://kit.fontawesome.com/4df4693a91.js" crossorigin="anonymous"></script>
-</head>
+  
+    <!--Potential Names for Website: BookVerse, NovelNook, or ReaderRealm-->
+    <title>NovelNook</title>
+  </head>
 
 <body>
 
@@ -16,74 +20,123 @@
         <h1>Library Help Page</h1>
     </div>
 
+    <!--Navigation Bar Start-->
     <nav>
-        <ul>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="explore.html">Explore</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="help.html">Help</a></li>
-            <li>
-                <a href="#">Account</a>
-                <ul class="dropdown">
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="signup.html">Register</a></li>
-                </ul>
-            </li>
-        </ul>
+        <div class="nav__content">
+            <div class="logo"><a href="home.html">NovelNook</a></div>
+            <label for="check" class="checkbox">
+                <i class="ri-menu-line"></i>
+            </label>
+            <input type="checkbox" name="check" id="check" />
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="explore.html">Explore</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="help.html">Help</a></li>
+                <li>
+                    <a href="#" id="account-link">Account</a>
+                    <ul class="dropdown" id="account-dropdown">
+                        <li><a href="login.html" id="login-link">Login</a></li>
+                        <li><a href="signup.html" id="signup-link">Register</a></li>
+                        <li><a href="#" id="mybooks-link" style="display: none;">My Books</a></li>
+                        <!-- My Books link -->
+                        <li><a href="#" id="logout-link" style="display: none;">Logout</a></li> <!-- Logout link -->
+                    </ul>
+                </li>
+            </ul>
+        </div>
     </nav>
+    <!--Navigation Bar End-->
 
-    <div class="container">
-        <div class="left-section">
-            <div class="how-to-use section">
-                <h1>How to Use the Website</h1><br>
-                <h3 class="how-to-heading">Explore</h3><br>
-                
-                <h3 class="how-to-heading">Search</h3><br>
-                <h3 class="how-to-heading">Read</h3><br>
+    <section class="section">
+        <div class="container">
+            <div class="left-section">
+                <div class="how-to-use section">
+                    <h1>How to Use the Website</h1><br>
+                    <h3 class="how-to-heading">Explore</h3><br>
+
+                    <h3 class="how-to-heading">Search</h3><br>
+                    <h3 class="how-to-heading">Read</h3><br>
+                </div>
+                <div class="how-to-cite section">
+                    <h2>How to Cite a Book</h2>
+
+                    <h4>APA</h4>
+                    <p>Author, A. A. (Year of publication). <i>Title of work: Capital letter also for subtitle.</i></p>
+                    <div class="citation-indent">
+                        <p>Publisher Name. DOI (if available)</p>
+                    </div>
+                    <p><b>Example:</b></p>
+                    <p>Malory, T. (2017). <i>Le morte darthur</i> (P. J. C. Field, Ed.). D. S. Brewer. Original</p>
+                    <div class="citation-indent">
+                        <p>work published 1469-70</p>
+                    </div><br>
+                    <h4>MLA</h4>
+                    <p>Last Name, First Name. <i>Title of Book.</i> Publisher, Publication, Date.</p>
+                    <p><b>Example:</b></p>
+                    <p>Gillespie, Paula, and Neal Lerner. <i>The Allyn and Bacon Guide to Peer Tutoring.</i></p>
+                    <div class="citation-indent">
+                        <p>Allyn and Bacon, 2000.</p>
+                    </div><br><br>
+
+                    <p>Information courtesy of Purdue Online Writing Lab, 2024.</p>
+
+                </div>
             </div>
-            <div class="how-to-cite section">
-                <h2>How to Cite a Book</h2>
+            <div class="right-section section">
+                <h2>Additional Library Resources</h2><br>
+                <p>Find your closest public library using <a href="https://www.usa.gov/libraries" target="blank"
+                        title="Support your local library today!">this tool!</a></p><br>
+                <a href="https://dp.la/" target="blank" title="Search thousands of books, movies, and artworks.">Digital
+                    Public Library of America</a><br>
+                <a href="https://catalog.loc.gov/" target="blank" title="Our Nation's Library.">Library of
+                    Congress</a><br>
+                <a href="https://www.lib.umd.edu/" target="blank" title="Visit our University's Library!">University of
+                    Maryland Library</a><br>
+                <a href="https://library.harvard.edu/" target="blank"
+                    title="The World's Largest Library by Volumes.">Harvard University Library</a><br>
 
-                <h4>APA</h4>
-                <p>Author, A. A. (Year of publication). <i>Title of work: Capital letter also for subtitle.</i></p>
-                <div class="citation-indent"><p>Publisher Name. DOI (if available)</p></div>
-                <p><b>Example:</b></p>
-                <p>Malory, T. (2017). <i>Le morte darthur</i> (P. J. C. Field, Ed.). D. S. Brewer. Original</p>
-                <div class="citation-indent"><p>work published 1469-70</p></div><br>
-                <h4>MLA</h4>
-                <p>Last Name, First Name. <i>Title of Book.</i> Publisher, Publication, Date.</p>
-                <p><b>Example:</b></p>
-                <p>Gillespie, Paula, and Neal Lerner. <i>The Allyn and Bacon Guide to Peer Tutoring.</i></p>
-                <div class="citation-indent"><p>Allyn and Bacon, 2000.</p></div><br><br>
-
-                <p>Information courtesy of Purdue Online Writing Lab, 2024.</p>
+                <h2>Additional Writing Resources</h2><br>
+                <a href="https://owl.purdue.edu/owl/index.html" target="blank"
+                    title="Writing Resource Provided by Purdue Univeristy.">Purdue Online Writing Lab</a><br>
+                <a href="https://writingcenter.emory.edu/resources/online-writing-resources.html" target="blank"
+                    title="Writing Resources from Emory University.">The Emory Writing Center</a><br>
+                <a href="https://www.citationmachine.net/" target="blank"
+                    title="We're not saying you should use this, but it does save time.">Citation Machine</a><br>
 
             </div>
         </div>
-        <div class="right-section section">
-            <h2>Additional Library Resources</h2><br>
-            <p>Find your closest public library using <a href="https://www.usa.gov/libraries" target="blank" title="Support your local library today!">this tool!</a></p><br>
-            <a href="https://dp.la/" target="blank" title="Search thousands of books, movies, and artworks.">Digital Public Library of America</a><br>
-            <a href="https://catalog.loc.gov/" target="blank" title="Our Nation's Library.">Library of Congress</a><br>
-            <a href="https://www.lib.umd.edu/" target="blank" title="Visit our University's Library!">University of Maryland Library</a><br>
-            <a href="https://library.harvard.edu/" target="blank" title="The World's Largest Library by Volumes.">Harvard University Library</a><br>
-
-            <h2>Additional Writing Resources</h2><br>
-            <a href="https://owl.purdue.edu/owl/index.html" target="blank" title="Writing Resource Provided by Purdue Univeristy.">Purdue Online Writing Lab</a><br>
-            <a href="https://writingcenter.emory.edu/resources/online-writing-resources.html" target="blank" title="Writing Resources from Emory University.">The Emory Writing Center</a><br>
-            <a href="https://www.citationmachine.net/" target="blank" title="We're not saying you should use this, but it does save time.">Citation Machine</a><br>
-
+        <div class="contact-us section">
+            <h2>Contact Open Library</h2>
+            <p>Phone: 1-800-555-1304</p>
+            <p>Email: <a href="mailto:support@library.com">support@library.com</a></p>
         </div>
-    </div>
-    <div class="contact-us section">
-        <h2>Contact Us</h2>
-        <p>Phone: 1-800-555-1304</p>
-        <p>Email: support@library.com</p>
-    </div>
-    
+    </section>
+    <!--Footer Section Start-->
     <footer id="footer">
-        <h2>All Rights Reserved.</h2>
+        <div class="footer__nav">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="explore.html">Explore</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="help.html">Help</a></li>
+            </ul>
+        </div>
+        <div class="footer__credit">
+            <p>Data provided by <a href="https://openlibrary.org/" target="_blank">Open Library</a>.</p>
+            <p>Open Library is an initiative of the Internet Archive, a 501(c)(3) non-profit, building a digital library
+                of
+                Internet sites and other cultural artifacts in digital form.</p>
+        </div>
+        <p>&copy; <span id="current-year"></span> NovelNook. All Rights Reserved.</p>
     </footer>
+    </footer>
+    <!--Footer Section End-->
+
+    <script>
+        // Script to update the year dynamically
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 
 </body>
 

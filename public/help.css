@@ -38,14 +38,6 @@ I put this in a seperate file so that I could debug*/
     font-family: "Poppins", sans-serif;
   }
   
-  #footer {
-    display: flex;
-    justify-content: center;
-    background-color: lightgray;
-    margin-top: 0px; 
-    padding: 10px 0;;
-  }
-  
   nav {
     width: 100%;
     position: fixed;
@@ -243,7 +235,56 @@ I put this in a seperate file so that I could debug*/
     margin: auto; 
 }
 
-footer {
-    margin-top: 20px;
-    text-align: center;
+/* Footer styling */
+#footer {
+  background-color: #f8f9fa;
+  padding: 20px 0;
+  text-align: center;
+}
+
+#footer .footer__nav {
+  margin-bottom: 10px;
+}
+
+#footer .footer__nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+#footer .footer__nav ul li {
+  display: inline;
+}
+
+#footer .footer__nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+#footer .footer__nav ul li a:hover {
+  color: #007bff;
+}
+
+.footer__line {
+  border: 0;
+  height: 3px;
+  background: #333; /* Change color as needed */
+  margin: 20px 0; /* Adjust margin as needed */
+}
+
+#footer .footer__credit {
+  font-size: 0.9em;
+  color: #666;
+}
+
+#footer .footer__credit a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+#footer .footer__credit a:hover {
+  text-decoration: underline;
 }
