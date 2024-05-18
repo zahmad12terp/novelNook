@@ -1,8 +1,8 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
     // See masked Password Input
     const eyeIcon = document.getElementById('eyeIcon');
     if (eyeIcon) {
-        eyeIcon.addEventListener('click', function () {
+        eyeIcon.addEventListener('click', function() {
             const passwordInput = document.getElementById('userPass');
             const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
             passwordInput.setAttribute('type', type);
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const numberRequirement = document.getElementById('numberRequirement');
 
     if (passwordInput) {
-        passwordInput.addEventListener('input', function () {
+        passwordInput.addEventListener('input', function() {
             const password = passwordInput.value;
 
             // Check length requirement
@@ -33,20 +33,17 @@ document.addEventListener('DOMContentLoaded', function () {
             numberRequirement.style.color = /\d/.test(password) ? 'green' : 'red';
         });
     }
-    // Check if the password meets the minimum length requirement
-    if (userPass.length < 6) {
-        return res.status(400).json({ error: 'Password must be at least 6 characters long' });
-    }
+
     // Form submission event listener
     const signupForm = document.getElementById('signupForm');
     if (signupForm) {
-        signupForm.addEventListener('submit', async function (event) {
+        signupForm.addEventListener('submit', async function(event) {
             event.preventDefault(); // Prevent default form submission
 
             const email = document.getElementById('userEmail').value; // Get email value
             const password = document.getElementById('userPass').value; // Get password value
             const userName = document.getElementById('userName').value; // Get username value
-            const full_name = document.getElementById('fullName').value; // Get full name value
+            const fullName = document.getElementById('fullName').value; // Get full name value
 
             try {
                 // Send signup request to backend
@@ -55,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({ userEmail: email, userPass: password, userName: userName, fullName: full_name })
+                    body: JSON.stringify({ userEmail: email, userPass: password, userName: userName, fullName: fullName })
                 });
 
                 if (!response.ok) {
@@ -78,5 +75,51 @@ document.addEventListener('DOMContentLoaded', function () {
                 alert('An error occurred while signing up user');
             }
         });
+    }
+
+    // User Authentication and Navigation Logic
+    const loginLink = document.getElementById('login-link');
+    const signupLink = document.getElementById('signup-link');
+    const logoutLink = document.getElementById('logout-link');
+    const accountLink = document.getElementById('account-link');
+    const myBooksLink = document.getElementById('mybooks-link');
+    const accountDropdown = document.getElementById('account-dropdown');
+
+    // Check if the user is logged in
+    const token = localStorage.getItem('token');
+
+    if (token) {
+        // Decode the token to get user information (assuming the token payload contains username)
+        const payload = JSON.parse(atob(token.split('.')[1]));
+        const username = payload.userName;
+
+        // Update the UI to reflect the logged-in state
+        accountLink.textContent = username;
+        loginLink.style.display = 'none';
+        signupLink.style.display = 'none';
+        myBooksLink.style.display = 'block';
+        logoutLink.style.display = 'block';
+
+        // Handle logout
+        logoutLink.addEventListener('click', function(event) {
+            event.preventDefault();
+            localStorage.removeItem('token');
+            window.location.href = 'login.html';
+        });
+
+        // Ensure My Books page is accessible only to logged-in users
+        if (window.location.pathname === '/mybooks.html' && !token) {
+            window.location.href = 'login.html';
+        }
+    } else {
+        // User is not logged in, show login and signup links
+        loginLink.style.display = 'block';
+        signupLink.style.display = 'block';
+        logoutLink.style.display = 'none';
+
+        // Redirect to login page if trying to access My Books page
+        if (window.location.pathname === '/mybooks.html') {
+            window.location.href = 'login.html';
+        }
     }
 });

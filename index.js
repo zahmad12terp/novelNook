@@ -107,6 +107,11 @@ app.get('/protected', verifyToken, (req, res) => {
     res.json({ message: `Hello user with ID: ${req.userId}` });
 });
 
+// Ensure My Books page is accessible only to logged-in users
+app.get('/mybooks.html', verifyToken, (req, res) => {
+    res.sendFile('mybooks.html', { root: __dirname + '/public' });
+});
+
 // Start the Express server
 app.listen(port, () => {
     console.log(`App is live and listening on port ${port}`);

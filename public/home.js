@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const signupLink = document.getElementById('signup-link');
     const logoutLink = document.getElementById('logout-link');
     const accountLink = document.getElementById('account-link');
+    const myBooksLink = document.getElementById('mybooks-link');
     const accountDropdown = document.getElementById('account-dropdown');
   
     // Check if the user is logged in
@@ -18,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
       loginLink.style.display = 'none';
       signupLink.style.display = 'none';
       // accountDropdown.style.display = 'none';
+      myBooksLink.style.display = 'block';
       logoutLink.style.display = 'block';
   
       // Handle logout

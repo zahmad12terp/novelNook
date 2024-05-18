@@ -48,16 +48,20 @@ const readingSubjects = [
   "cross-cultural psychology", "industrial-organizational psychology", "human factors psychology", "environmental psychology", 
   "personality psychology", "abnormal psychology", "experimental"]
 
+let currentBookIndex = -1;
+let bookHistory = [];
 
-function getRandomSubject(list_of_subjects) {
-  const randomIndex = Math.floor(Math.random() * list_of_subjects.length);
-  return list_of_subjects[randomIndex];
+function getRandomElement(array) {
+  const randomIndex = Math.floor(Math.random() * array.length);
+  return array[randomIndex];
 }
 
-function getRandomObject(data) {
-  const worksArray = data.works;
-  const randomIndex = Math.floor(Math.random() * worksArray.length);
-  return worksArray[randomIndex];
+async function fetchJson(url) {
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error(`Failed to fetch data from ${url}`);
+  }
+  return response.json();
 }
 
 async function getDescription(olid) {
@@ -80,7 +84,7 @@ async function getDescription(olid) {
 }
 
 async function getRandomBook() {
-  const randomSubject = getRandomSubject(readingSubjects);
+  const randomSubject = getRandomElement(readingSubjects);
   console.log('Random Subject:', randomSubject);
 
   try {
@@ -111,9 +115,6 @@ async function getRandomBook() {
       bookOlid,
       bookIsbn
     };
-
-    console.log('Book Data:', bookData);
-    return bookData;
   } catch (error) {
     console.error('Error fetching random book:', error);
     return getRandomBook(); // Retry fetching a random book
@@ -190,6 +191,8 @@ function clearDiv(divId) {
 
 async function displayRandomBook() {
   const bookData = await getRandomBook();
+  bookHistory.push(bookData);
+  currentBookIndex = bookHistory.length - 1;
   setBook(bookData);
   return; 
 }
