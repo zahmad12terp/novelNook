@@ -35,6 +35,8 @@
                     <ul class="dropdown" id="account-dropdown">
                         <li><a href="login.html" id="login-link">Login</a></li>
                         <li><a href="signup.html" id="signup-link">Register</a></li>
+                        <li><a href="#" id="mybooks-link" style="display: none;">My Books</a></li>
+                        <!-- My Books link -->
                         <li><a href="#" id="logout-link" style="display: none;">Logout</a></li> <!-- Logout link -->
                     </ul>
                 </li>
@@ -43,8 +45,8 @@
     </nav>
     <!--Navigation Bar End-->
 
-     <!--Main Container Start-->
-     <section class="section">
+    <!--Main Container Start-->
+    <section class="section">
         <div class="book-wrapper">
             <div id="container" class="book-container">
                 <div class="book">
@@ -67,11 +69,32 @@
             </div>
         </div>
     </section>
+    <!--Footer Section Start-->
     <footer id="footer">
-        <h2>All Rights Reserved.</h2>
+        <div class="footer__nav">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="explore.html">Explore</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="help.html">Help</a></li>
+            </ul>
+        </div>
+        <div class="footer__credit">
+            <p>Data provided by <a href="https://openlibrary.org/" target="_blank">Open Library</a>.</p>
+            <p>Open Library is an initiative of the Internet Archive, a 501(c)(3) non-profit, building a digital library
+                of
+                Internet sites and other cultural artifacts in digital form.</p>
+        </div>
+        <p>&copy; <span id="current-year"></span> NovelNook. All Rights Reserved.</p>
     </footer>
+    </footer>
+    <!--Footer Section End-->
+
     <script>
-        document.querySelector('.like-button').addEventListener('click', function() {
+        // Script to update the year dynamically
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        document.querySelector('.like-button').addEventListener('click', function () {
             alert('Book Liked and Added to Personal Book Collection');
             // Additional code to add the book to the user's collection can be added here
         });
