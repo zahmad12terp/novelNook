@@ -32,8 +32,9 @@ body {
   display: flex;
   justify-content: center;
   background-color: lightgray;
-  margin-top: 0px; 
-  padding: 10px 0;;
+  margin-top: 0px;
+  padding: 10px 0;
+  ;
 }
 
 nav {
@@ -60,6 +61,7 @@ nav .logo a {
   color: var(--primary-color);
   transition: 0.3s;
 }
+
 nav .logo a:hover {
   color: var(--primary-color-dark);
 }
@@ -71,6 +73,7 @@ nav .checkbox {
 nav input {
   display: none;
 }
+
 nav .checkbox i {
   font-size: 2rem;
   color: var(--primary-color);
@@ -84,6 +87,7 @@ ul {
   list-style: none;
   transition: left 0.3s;
 }
+
 nav ul li {
   position: relative;
 }
@@ -97,9 +101,9 @@ nav ul li:hover .dropdown {
   position: absolute;
   top: 100%;
   left: 0;
-  width: 200px; 
-  background-color: #fff; 
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  width: 200px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   z-index: 100;
 }
 
@@ -127,7 +131,7 @@ ul li a {
 }
 
 ul li a:hover {
-  
+
   color: var(--primary-color);
 }
 
@@ -137,54 +141,122 @@ ul li a:hover {
 
 /* Footer styling */
 #footer {
-    background-color: #f8f9fa;
-    padding: 20px 0;
-    text-align: center;
-  }
-  
-  #footer .footer__nav {
-    margin-bottom: 10px;
-  }
-  
-  #footer .footer__nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-  }
-  
-  #footer .footer__nav ul li {
-    display: inline;
-  }
-  
-  #footer .footer__nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-  }
-  
-  #footer .footer__nav ul li a:hover {
-    color: #007bff;
-  }
-  
-  .footer__line {
-    border: 0;
-    height: 3px;
-    background: #333; /* Change color as needed */
-    margin: 20px 0; /* Adjust margin as needed */
-  }
-  
-  #footer .footer__credit {
-    font-size: 0.9em;
-    color: #666;
-  }
-  
-  #footer .footer__credit a {
-    color: #007bff;
-    text-decoration: none;
-  }
-  
-  #footer .footer__credit a:hover {
-    text-decoration: underline;
-  }
+  background-color: #f8f9fa;
+  padding: 20px 0;
+  text-align: center;
+}
+
+#footer .footer__nav {
+  margin-bottom: 10px;
+}
+
+#footer .footer__nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+#footer .footer__nav ul li {
+  display: inline;
+}
+
+#footer .footer__nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+#footer .footer__nav ul li a:hover {
+  color: #007bff;
+}
+
+.footer__line {
+  border: 0;
+  height: 3px;
+  background: #333;
+  /* Change color as needed */
+  margin: 20px 0;
+  /* Adjust margin as needed */
+}
+
+#footer .footer__credit {
+  font-size: 0.9em;
+  color: #666;
+}
+
+#footer .footer__credit a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+#footer .footer__credit a:hover {
+  text-decoration: underline;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+}
+
+.table th,
+.table td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+}
+
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.table tbody + tbody {
+  border-top: 2px solid #dee2e6;
+}
+
+.table-bordered {
+  border: 1px solid #dee2e6;
+}
+
+.table-bordered th,
+.table-bordered td {
+  border: 1px solid #dee2e6;
+}
+
+.table-bordered thead th,
+.table-bordered thead td {
+  border-bottom-width: 2px;
+}
+
+.thead-dark th {
+  color: #fff;
+  background-color: #343a40;
+  border-color: #454d55;
+}
+
+h2 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+  padding-top: 20px;
+  z-index: 1;
+  position: relative;
+}
+
+.section {
+  padding: 20px;
+  overflow: hidden; /* Ensure the section expands to contain its children */
+}

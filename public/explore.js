@@ -147,7 +147,7 @@ function setBook(bookData) {
   if (bookData.bookCover) {
     document.getElementById('book-cover').src = bookData.bookCover;
   } else {
-    document.getElementById('book-cover').src = 'default_cover.jpg';
+    document.getElementById('book-cover').src = 'book_cover.jpg';
     document.getElementById('book-cover').alt = 'No cover available';
   }
 }
@@ -202,11 +202,13 @@ async function storeBookData(bookData) {
       body: JSON.stringify(payload)
     });
 
+    const responseData = await response.json();
+    console.log('Response from server:', responseData);
+
     if (!response.ok) {
-      throw new Error('Failed to store book data');
+      throw new Error(responseData.error || 'Failed to store book data');
     }
 
-    alert('Book liked and added to your collection!');
   } catch (error) {
     console.error('Error storing book data:', error);
     alert('An error occurred while storing the book data.');

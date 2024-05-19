@@ -56,7 +56,7 @@ app.post('/signup', async (req, res) => {
     }
 });
 
-/// Route to handle user login
+// Route to handle user login
 app.post('/login', async (req, res) => {
     const { userEmail, userPass } = req.body;
 
@@ -77,7 +77,7 @@ app.post('/login', async (req, res) => {
             return res.status(400).json({ error: 'Invalid email or password' });
         }
 
-        const token = jwt.sign({ userId: userData.id, userName: userData.username }, jwtSecret, { expiresIn: '1h' });
+        const token = jwt.sign({ username: userData.username }, jwtSecret, { expiresIn: '1h' });
         res.status(200).json({ message: 'Login successful', token });
     } catch (error) {
         console.error('Unexpected error logging in:', error.message);
@@ -97,54 +97,59 @@ const verifyToken = (req, res, next) => {
             return res.status(401).json({ error: 'Unauthorized access' });
         }
 
-        req.userId = decoded.userId;
+        req.username = decoded.username;
         next();
     });
 };
 
+// Route to store book data
 app.post('/store-book', verifyToken, async (req, res) => {
     const { olid, isbn, book_title, book_genre, book_description, book_author } = req.body;
-    const userId = req.userId; // Assuming verifyToken middleware adds userId to the request
-  
-    try {
-      const { data, error } = await supabase
-        .from('myBookCollection')
-        .insert([{ user_id: userId, olid, isbn, book_title, book_genre, book_description, book_author }]);
-  
-      if (error) {
-        throw error;
-      }
-  
-      res.status(200).json({ message: 'Book stored successfully' });
-    } catch (error) {
-      console.error('Error storing book:', error.message);
-      res.status(500).json({ error: 'Failed to store book' });
-    }
-  });
+    const username = req.username; // Extracted from the token
 
-  app.get('/mybooks', verifyToken, async (req, res) => {
-    const userId = req.userId; // Assuming verifyToken middleware adds userId to the request
-  
+    console.log('Received payload:', req.body);
+
     try {
-      const { data, error } = await supabase
-        .from('myBookCollection')
-        .select('*')
-        .eq('user_id', userId);
-  
-      if (error) {
-        throw error;
-      }
-  
-      res.status(200).json(data);
+        const { data, error } = await supabase
+            .from('myBookCollection')
+            .insert([{ username, olid, isbn, book_title, book_genre, book_description, book_author }]);
+
+        if (error) {
+            console.error('Error storing book in Supabase:', error);
+            throw error;
+        }
+
+        res.status(200).json({ message: 'Book stored successfully' });
     } catch (error) {
-      console.error('Error fetching book collection:', error.message);
-      res.status(500).json({ error: 'Failed to fetch book collection' });
+        console.error('Error storing book:', error.message);
+        res.status(500).json({ error: 'Failed to store book' });
     }
-  });
+});
+
+// Route to fetch liked books for the logged-in user
+app.get('/mybooks', verifyToken, async (req, res) => {
+    const username = req.username; // Extracted from the token
+
+    try {
+        const { data, error } = await supabase
+            .from('myBookCollection')
+            .select('*')
+            .eq('username', username);
+
+        if (error) {
+            throw error;
+        }
+
+        res.status(200).json(data);
+    } catch (error) {
+        console.error('Error fetching book collection:', error.message);
+        res.status(500).json({ error: 'Failed to fetch book collection' });
+    }
+});
 
 // Protected route example
 app.get('/protected', verifyToken, (req, res) => {
-    res.json({ message: `Hello user with ID: ${req.userId}` });
+    res.json({ message: `Hello user with username: ${req.username}` });
 });
 
 // Ensure My Books page is accessible only to logged-in users
