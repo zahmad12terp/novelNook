@@ -9,6 +9,7 @@ Using a random book generator from the Open Library API we show book previews to
 We have utilized JavaScript, HTML, CSS, React, Supabase, API's and more to make NovelNook possible.
 ## Description of Target Browsers
 This web app can be used on a variety of browsers to increase target audience. As we were developing we used Google Chrome to develop the app, but it works on mobile browsers as well. 
+
 ## Developer Manual
-### Installation of NovelNook Application
-To access the 
+Link to Developer Manual [here](docs.md)
+
