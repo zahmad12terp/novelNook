@@ -48,20 +48,20 @@
             <div id="container" class="book-container">
                 <div class="book">
                     <div class="page left-page">
-                        <img id="book-cover" src="default_cover.jpg" alt="Book Cover">
+                        <img id="book-cover" src="book_cover.jpg" alt="Book Cover">
                     </div>
                     <div class="page right-page">
-                        <h2 id="title">Book Title: </h2>
-                        <p id="author">Book Author: </p>
-                        <p id="genre">Book Genre: </p>
-                        <p id="description">Description: </p>
+                        <h2 id="title"></h2>
+                        <p id="author" class="book-info">Author: </p>
+                        <p id="genre" class="book-info">Genre: </p>
+                        <p id="description" class="book-info">Description: </p>
                     </div>
                 </div>
             </div>
-            <button class="like-button"><i class="fas fa-thumbs-up"></i></button>
-            <div class="next-prev-buttons">
-                <button id="prev-book" onclick="showPreviousBook()">Previous Book</button>
-                <button id="next-book" onclick="showNewBook()">Next Book</button>
+            <div class="buttons-container">
+                <button id="prev-book">Previous Book</button>
+                <button class="like-button"><i class="fas fa-thumbs-up"></i></button>
+                <button id="next-book">Next Book</button>
             </div>
         </div>
     </section>

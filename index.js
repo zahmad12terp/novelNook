@@ -102,6 +102,46 @@ const verifyToken = (req, res, next) => {
     });
 };
 
+app.post('/store-book', verifyToken, async (req, res) => {
+    const { olid, isbn, book_title, book_genre, book_description, book_author } = req.body;
+    const userId = req.userId; // Assuming verifyToken middleware adds userId to the request
+  
+    try {
+      const { data, error } = await supabase
+        .from('myBookCollection')
+        .insert([{ user_id: userId, olid, isbn, book_title, book_genre, book_description, book_author }]);
+  
+      if (error) {
+        throw error;
+      }
+  
+      res.status(200).json({ message: 'Book stored successfully' });
+    } catch (error) {
+      console.error('Error storing book:', error.message);
+      res.status(500).json({ error: 'Failed to store book' });
+    }
+  });
+
+  app.get('/mybooks', verifyToken, async (req, res) => {
+    const userId = req.userId; // Assuming verifyToken middleware adds userId to the request
+  
+    try {
+      const { data, error } = await supabase
+        .from('myBookCollection')
+        .select('*')
+        .eq('user_id', userId);
+  
+      if (error) {
+        throw error;
+      }
+  
+      res.status(200).json(data);
+    } catch (error) {
+      console.error('Error fetching book collection:', error.message);
+      res.status(500).json({ error: 'Failed to fetch book collection' });
+    }
+  });
+
 // Protected route example
 app.get('/protected', verifyToken, (req, res) => {
     res.json({ message: `Hello user with ID: ${req.userId}` });

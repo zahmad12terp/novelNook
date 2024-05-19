@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
@@ -9,14 +8,13 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="home.css" />
     <script src="app.js" defer></script>
+    <script src="mybooks.js" defer></script>
     <script src="https://kit.fontawesome.com/4df4693a91.js" crossorigin="anonymous"></script>
 
-    <!--Potential Names for Website: BookVerse, NovelNook, or ReaderRealm-->
     <title>NovelNook</title>
 </head>
 
 <body>
-
     <!--Navigation Bar Start-->
     <nav>
         <div class="nav__content">
@@ -36,8 +34,7 @@
                         <li><a href="login.html" id="login-link">Login</a></li>
                         <li><a href="signup.html" id="signup-link">Register</a></li>
                         <li><a href="mybooks.html" id="mybooks-link" style="display: none;">My Books</a></li>
-                        <!-- My Books link -->
-                        <li><a href="#" id="logout-link" style="display: none;">Logout</a></li> <!-- Logout link -->
+                        <li><a href="#" id="logout-link" style="display: none;">Logout</a></li>
                     </ul>
                 </li>
             </ul>
@@ -45,9 +42,22 @@
     </nav>
     <!--Navigation Bar End-->
 
-    <!--Main Containter Start-->
+    <!--Main Container Start-->
     <section class="section">
-
+        <table id="books-table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Genre</th>
+                    <th>Description</th>
+                    <th>ISBN</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data will be populated here by mybooks.js -->
+            </tbody>
+        </table>
     </section>
     <!--Main Container End-->
 
@@ -64,18 +74,16 @@
         <div class="footer__credit">
             <p>Data provided by <a href="https://openlibrary.org/" target="_blank">Open Library</a>.</p>
             <p>Open Library is an initiative of the Internet Archive, a 501(c)(3) non-profit, building a digital library
-                of
-                Internet sites and other cultural artifacts in digital form.</p>
+                of Internet sites and other cultural artifacts in digital form.</p>
         </div>
         <p>&copy; <span id="current-year"></span> NovelNook. All Rights Reserved.</p>
     </footer>
-    </footer>
-    <!--Footer Section End-->
 
     <script>
         // Script to update the year dynamically
         document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
+
 </body>
 
 </html>
