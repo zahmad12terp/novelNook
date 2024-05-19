@@ -1,11 +1,12 @@
 # Developer Manual
 <!--Your Developer Manual covers:
-How to install your application and all dependencies
-How to run your application on a server
-How to run any tests you have written for your software
-The API for your server application - all GET, POST, PATCH, etc endpoints, and what they each do
-A clear set of expectations around known bugs and a road-map for future development.-->
+* How to install your application and all dependencies
+* How to run your application on a server
+* How to run any tests you have written for your software
+* The API for your server application - all GET, POST, PATCH, etc endpoints, and what they each do
+* A clear set of expectations around known bugs and a road-map for future development.-->
 ### Installation of NovelNook Application
+<!--Come back and link the finished vercel app here-->
 Completed web application is linked [here]().
 <br>
 To install the application for further development purposes, it's files are all hosted on this Github link found [here](https://github.com/zahmad12terp/novelNook). 
