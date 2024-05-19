@@ -9,13 +9,10 @@
     <link rel="stylesheet" href="help.css" />
     <script src="app.js" defer></script>
     <script src="https://kit.fontawesome.com/4df4693a91.js" crossorigin="anonymous"></script>
-
-    <!--Potential Names for Website: BookVerse, NovelNook, or ReaderRealm-->
     <title>NovelNook</title>
 </head>
 
 <body>
-
     <div id="header">
         <h1>Library Help Page</h1>
     </div>
@@ -39,8 +36,7 @@
                         <li><a href="login.html" id="login-link">Login</a></li>
                         <li><a href="signup.html" id="signup-link">Register</a></li>
                         <li><a href="mybooks.html" id="mybooks-link" style="display: none;">My Books</a></li>
-                        <!-- My Books link -->
-                        <li><a href="#" id="logout-link" style="display: none;">Logout</a></li> <!-- Logout link -->
+                        <li><a href="#" id="logout-link" style="display: none;">Logout</a></li>
                     </ul>
                 </li>
             </ul>
@@ -48,77 +44,83 @@
     </nav>
     <!--Navigation Bar End-->
 
-    <section class="section">
-        <div class="container">
-            <div class="left-section">
-                <div class="how-to-use section">
-                    <div>
-                        <h3 class="how-to-heading">Explore</h3><br>
-                        <p class="howToDescription">Using the explore page, find books you're interested in!</p>
-                    </div>
-                    <div>
-                        <h3 class="how-to-heading">Search</h3><br>
-                        <p class="howToDescription">Simply use the buttons at the bottom of the screen to find the next book for recommended for you. You can hit the thumbs up icon to save it. If you skip one you like, no worries. Just hit the button for previous.</p>
-                    </div>
-                    <div>
-                        <h3 class="how-to-heading">Read</h3><br>
-                        <p class="howToDescription">Keep track of books you've liked by making an account through the account tab. Click <b>register</b> if you're a new user.</p>
-                    </div>
+    <h1>Help Page</h1>
+    <div class="container">
+        <div class="main-content">
+            <div class="content-top">
+                <h2 id="how-to">How to Navigate Novel Nook</h2>
+                <h3 class="how-to-heading">1. Explore</h3>
+                <p class="howToDescription">Using the explore page to find books you're interested in!</p>
+                <br>
+
+                <h3 class="how-to-heading">2. Personalize Book Collection</h3>
+                <p class="howToDescription">Simply use the 'Next' and 'Previous' buttons at the bottom of the explore
+                    page to find a book you like. To preview the previous book, just hit the previous button.
+                    You can hit the thumbs up icon ('Like' Button) to save it to your personal book collection.
+                    <br>
+                    <br><strong>Please Note:</strong>
+                    You must create a new account to like a book and save it in your collection. If you don't have an
+                    account, <a href="signup.html">Click here to signup</a>
+                </p>
+                <br>
+
+                <h3 class="how-to-heading">3. Purchase and Read the book</h3>
+                <p class="howToDescription">All your personalized books can be accessed once you login to the account.
+                    For each saved book, there is a link to purchase it on Amazon.com</p>
+            </div>
+            <div class="content-bottom">
+                <h2>How to Cite a Book</h2>
+                <h3>APA</h3>
+                <p>Author, A. A. (Year of publication). <i>Title of work: Capital letter also for subtitle.</i></p>
+
+                <p>Publisher Name. DOI (if available)</p>
+
+                <p><b>Example:</b></p>
+                <p>Malory, T. (2017). <i>Le morte darthur</i> (P. J. C. Field, Ed.). D. S. Brewer. Original</p>
+                <div class="citation-indent">
+                    <p>work published 1469-70</p>
                 </div>
-                <div class="how-to-cite section">
-                    <h2>How to Cite a Book</h2>
 
-                    <h4>APA</h4>
-                    <p>Author, A. A. (Year of publication). <i>Title of work: Capital letter also for subtitle.</i></p>
-                    <div class="citation-indent">
-                        <p>Publisher Name. DOI (if available)</p>
-                    </div>
-                    <p><b>Example:</b></p>
-                    <p>Malory, T. (2017). <i>Le morte darthur</i> (P. J. C. Field, Ed.). D. S. Brewer. Original</p>
-                    <div class="citation-indent">
-                        <p>work published 1469-70</p>
-                    </div><br>
-                    <h4>MLA</h4>
-                    <p>Last Name, First Name. <i>Title of Book.</i> Publisher, Publication, Date.</p>
-                    <p><b>Example:</b></p>
-                    <p>Gillespie, Paula, and Neal Lerner. <i>The Allyn and Bacon Guide to Peer Tutoring.</i></p>
-                    <div class="citation-indent">
-                        <p>Allyn and Bacon, 2000.</p>
-                    </div><br><br>
-
-                    <p>Information courtesy of Purdue Online Writing Lab, 2024.</p>
-
+                <h3>MLA</h3>
+                <p>Last Name, First Name. <i>Title of Book.</i> Publisher, Publication, Date.</p>
+                <p><b>Example:</b></p>
+                <p>Gillespie, Paula, and Neal Lerner. <i>The Allyn and Bacon Guide to Peer Tutoring.</i></p>
+                <div class="citation-indent">
+                    <p>Allyn and Bacon, 2000.</p>
                 </div>
             </div>
-            <div class="right-section section">
-                <h2>Additional Library Resources</h2><br>
-                <p>Find your closest public library using <a href="https://www.usa.gov/libraries" target="blank"
-                        title="Support your local library today!">this tool!</a></p><br>
-                <a href="https://dp.la/" target="blank" title="Search thousands of books, movies, and artworks.">Digital
-                    Public Library of America</a><br>
-                <a href="https://catalog.loc.gov/" target="blank" title="Our Nation's Library.">Library of
-                    Congress</a><br>
-                <a href="https://www.lib.umd.edu/" target="blank" title="Visit our University's Library!">University of
-                    Maryland Library</a><br>
-                <a href="https://library.harvard.edu/" target="blank"
-                    title="The World's Largest Library by Volumes.">Harvard University Library</a><br>
-
-                <h2>Additional Writing Resources</h2><br>
-                <a href="https://owl.purdue.edu/owl/index.html" target="blank"
-                    title="Writing Resource Provided by Purdue Univeristy.">Purdue Online Writing Lab</a><br>
-                <a href="https://writingcenter.emory.edu/resources/online-writing-resources.html" target="blank"
-                    title="Writing Resources from Emory University.">The Emory Writing Center</a><br>
-                <a href="https://www.citationmachine.net/" target="blank"
-                    title="We're not saying you should use this, but it does save time.">Citation Machine</a><br>
-
+            <div class="contact-us section">
+                <h2>Contact Open Library</h2>
+                <p>Phone: 1-800-555-1304</p>
+                <p>Email: <a href="mailto:support@library.com">support@library.com</a></p>
             </div>
         </div>
-        <div class="contact-us section">
-            <h2>Contact Open Library</h2>
-            <p>Phone: 1-800-555-1304</p>
-            <p>Email: <a href="mailto:support@library.com">support@library.com</a></p>
+        <div class="sidebar">
+            <h2>Additional Library Resources</h2>
+            <p>Find your closest public library using <a href="https://www.usa.gov/libraries" target="_blank"
+                    title="Support your local library today!">this tool!</a></p>
+            <a href="https://dp.la/" target="_blank" title="Search thousands of books, movies, and artworks.">Digital
+                Public
+                Library of America</a><br>
+            <a href="https://catalog.loc.gov/" target="_blank" title="Our Nation's Library.">Library of Congress</a><br>
+            <a href="https://www.lib.umd.edu/" target="_blank" title="Visit our University's Library!">University of
+                Maryland Library</a><br>
+            <a href="https://library.harvard.edu/" target="_blank"
+                title="The World's Largest Library by Volumes.">Harvard
+                University Library</a>
+
+            <hr>
+            <br>
+            <h2>Additional Writing Resources</h2>
+            <a href="https://owl.purdue.edu/owl/index.html" target="_blank"
+                title="Writing Resource Provided by Purdue University.">Purdue Online Writing Lab</a><br>
+            <a href="https://writingcenter.emory.edu/resources/online-writing-resources.html" target="_blank"
+                title="Writing Resources from Emory University.">The Emory Writing Center</a><br>
+            <a href="https://www.citationmachine.net/" target="_blank"
+                title="We're not saying you should use this, but it does save time.">Citation Machine</a>
         </div>
-    </section>
+    </div>
+
     <!--Footer Section Start-->
     <footer id="footer">
         <div class="footer__nav">
@@ -132,11 +134,9 @@
         <div class="footer__credit">
             <p>Data provided by <a href="https://openlibrary.org/" target="_blank">Open Library</a>.</p>
             <p>Open Library is an initiative of the Internet Archive, a 501(c)(3) non-profit, building a digital library
-                of
-                Internet sites and other cultural artifacts in digital form.</p>
+                of Internet sites and other cultural artifacts in digital form.</p>
         </div>
         <p>&copy; <span id="current-year"></span> NovelNook. All Rights Reserved.</p>
-    </footer>
     </footer>
     <!--Footer Section End-->
 
@@ -144,7 +144,6 @@
         // Script to update the year dynamically
         document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
-
 </body>
 
 </html>
