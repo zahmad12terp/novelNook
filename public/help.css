@@ -1,7 +1,3 @@
-/*I [Samira] will integrate this into styles.css but for testing
-I put this in a seperate file so that I could debug*/
-
-
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
 
 :root {
@@ -206,12 +202,16 @@ I put this in a seperate file so that I could debug*/
     box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
     text-align: center; 
     margin-top: 20px;
+    margin-left: 15%;
 }
 .citation-indent {
     text-indent: 5%;
 }
 .how-to-heading {
     text-align: center;
+}
+.howToDescription{
+  text-align: center;
 }
 
 .section {
