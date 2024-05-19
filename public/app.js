@@ -91,10 +91,14 @@ document.addEventListener('DOMContentLoaded', function() {
     if (token) {
         // Decode the token to get user information (assuming the token payload contains username)
         const payload = JSON.parse(atob(token.split('.')[1]));
-        const username = payload.userName;
+        console.log(payload);
+        const username = payload.username;
+
+        console.log(username)
 
         // Update the UI to reflect the logged-in state
         accountLink.textContent = username;
+        accountLink.style.display = 'block';
         loginLink.style.display = 'none';
         signupLink.style.display = 'none';
         myBooksLink.style.display = 'block';

@@ -137,6 +137,67 @@ ul li a:hover {
 
 .section {
   background-color: var(--bg-color);
+  margin-top: 30px;
+  padding: 10px;
+}
+
+.container {
+  width: 1300px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h2 {
+  color: #333;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-top: 20px;
+  z-index: 1;
+  position: relative;
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+  background-color: #f5d6d6;
+}
+
+.table th,
+.table td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+}
+
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.table tbody + tbody {
+  border-top: 2px solid #dee2e6;
+}
+
+.table-bordered {
+  border: 1px solid #dee2e6;
+}
+
+.table-bordered th,
+.table-bordered td {
+  border: 2px solid #f4b4a9;
+}
+
+.table-bordered thead th,
+.table-bordered thead td {
+  border-bottom-width: 2px;
+}
+
+.thead-dark th {
+  color: #fff;
+  background-color: #343a40;
+  border-color: #77838f;
 }
 
 /* Footer styling */
@@ -175,10 +236,8 @@ ul li a:hover {
 .footer__line {
   border: 0;
   height: 3px;
-  background: #333;
-  /* Change color as needed */
-  margin: 20px 0;
-  /* Adjust margin as needed */
+  background: #333; /* Change color as needed */
+  margin: 20px 0; /* Adjust margin as needed */
 }
 
 #footer .footer__credit {
@@ -193,70 +252,4 @@ ul li a:hover {
 
 #footer .footer__credit a:hover {
   text-decoration: underline;
-}
-
-body {
-  font-family: 'Arial', sans-serif;
-}
-
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.table {
-  width: 100%;
-  margin-bottom: 1rem;
-  color: #212529;
-}
-
-.table th,
-.table td {
-  padding: 0.75rem;
-  vertical-align: top;
-  border-top: 1px solid #dee2e6;
-}
-
-.table thead th {
-  vertical-align: bottom;
-  border-bottom: 2px solid #dee2e6;
-}
-
-.table tbody + tbody {
-  border-top: 2px solid #dee2e6;
-}
-
-.table-bordered {
-  border: 1px solid #dee2e6;
-}
-
-.table-bordered th,
-.table-bordered td {
-  border: 1px solid #dee2e6;
-}
-
-.table-bordered thead th,
-.table-bordered thead td {
-  border-bottom-width: 2px;
-}
-
-.thead-dark th {
-  color: #fff;
-  background-color: #343a40;
-  border-color: #454d55;
-}
-
-h2 {
-  color: #333;
-  text-align: center;
-  margin-bottom: 20px;
-  padding-top: 20px;
-  z-index: 1;
-  position: relative;
-}
-
-.section {
-  padding: 20px;
-  overflow: hidden; /* Ensure the section expands to contain its children */
 }

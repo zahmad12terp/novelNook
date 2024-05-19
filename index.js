@@ -112,10 +112,12 @@ app.post('/store-book', verifyToken, async (req, res) => {
     try {
         const { data, error } = await supabase
             .from('myBookCollection')
-            .insert([{ username, olid, isbn, book_title, book_genre, book_description, book_author }]);
+            .insert([{ username, isbn, book_title, book_author, book_genre, book_description }]);
 
         if (error) {
-            console.error('Error storing book in Supabase:', error);
+            if (error.code === '23505') { // Unique violation error code
+                return res.status(409).json({ error: 'You have already liked this book.' });
+            }
             throw error;
         }
 
@@ -144,6 +146,26 @@ app.get('/mybooks', verifyToken, async (req, res) => {
     } catch (error) {
         console.error('Error fetching book collection:', error.message);
         res.status(500).json({ error: 'Failed to fetch book collection' });
+    }
+});
+
+app.delete('/delete-book', verifyToken, async (req, res) => {
+    const { username, isbn } = req.body;
+
+    try {
+        const { data, error } = await supabase
+            .from('myBookCollection')
+            .delete()
+            .match({ username, isbn });
+
+        if (error) {
+            throw error;
+        }
+
+        res.status(200).json({ message: 'Book deleted successfully.' });
+    } catch (error) {
+        console.error('Error deleting book:', error.message);
+        res.status(500).json({ error: 'Failed to delete book' });
     }
 });
 

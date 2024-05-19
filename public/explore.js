@@ -48,6 +48,16 @@ const readingSubjects = [
   "personality psychology", "abnormal psychology", "experimental psychology"
 ];
 
+const showLoadingOverlay = () => {
+  const loadingOverlay = document.getElementById('loading-overlay');
+  loadingOverlay.style.display = 'flex';
+};
+
+const hideLoadingOverlay = () => {
+  const loadingOverlay = document.getElementById('loading-overlay');
+  loadingOverlay.style.display = 'none';
+};
+
 function getRandomElement(array) {
   const randomIndex = Math.floor(Math.random() * array.length);
   return array[randomIndex];
@@ -153,19 +163,23 @@ function setBook(bookData) {
 }
 
 async function displayRandomBook() {
+  showLoadingOverlay();
   const bookData = await getRandomBook();
+  hideLoadingOverlay();
   bookHistory.push(bookData);
   currentBookIndex = bookHistory.length - 1;
   setBook(bookData);
 }
 
 document.getElementById('next-book').addEventListener('click', async () => {
+  showLoadingOverlay();
   if (currentBookIndex < bookHistory.length - 1) {
     currentBookIndex++;
     setBook(bookHistory[currentBookIndex]);
   } else {
     await displayRandomBook();
   }
+  hideLoadingOverlay();
 });
 
 document.getElementById('prev-book').addEventListener('click', () => {
@@ -210,8 +224,10 @@ async function storeBookData(bookData) {
     }
 
   } catch (error) {
+    if (error.message.includes('You have already liked this book.')) {
+      alert('You have already liked this book.');
+    }
     console.error('Error storing book data:', error);
-    alert('An error occurred while storing the book data.');
   }
 }
 
