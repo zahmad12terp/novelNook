@@ -27,6 +27,9 @@ We used
 ### Testing
 We did not have any formal unit testing of code. All code testing was done by refreshing the page after edits were made and viewing the results. 
 
+### API for Server Application - all GET, POST, PATCH, etc endpoints, and what they each do
+
+
 ### Expectations Around Known Bugs and Roadmap for Future Development
 On the Explore page, the API takes a few seconds to load and populate the web page, in the future we will try to fix the load time. Additionally, when populating the web page with books, sometimes descriptions or book covers are missing, in the future, we hope to either 1) remove books that are missing elements or 2) reflect the missing element better on the page by adding a placeholder so the page doesn't look "empty". 
 <br><br>
