@@ -53,6 +53,7 @@ Using index.js we handle the backend server connection to SupaBase backend.
     - Method: POST
     - Headers: Content-Type: application/json
     - Body: {"userName": "testuser", "fullName": "Test User", "userEmail": "test@example.com", "userPass": "password123"}
+    - Returns: A new user is added to supabase user's table.
    
  2. POST /signup (Add New User)
     - URL: https://novel-nook.vercel.app/login
