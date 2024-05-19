@@ -3,6 +3,7 @@ Names: Zeeshawn Ahmad, Hannah Johnston, Samira Koraganie, Shamariah Ogu, William
 
 ## Introduction
 Our project is called NovelNook. It is a new way for users to discover books! 
+Our Website is live on vercel and can be accessed using this link: https://novel-nook.vercel.app/home.html
 ## Description of the Project
 Finding books can be a hard process for readers. Readers don't want to waste their time and/or their money reading a book they don't enjoy. To solve this issue we decided to develop a web application to show readers books in a fast and simple way. <br>
 Using a random book generator from the Open Library API we show book previews to our users. NovelNook suggests books to readers based on books they have "liked". This minimizes the stress of manually searching for a new book to read and helps find books the user will enjoy. <br>
